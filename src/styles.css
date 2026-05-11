@@ -1,0 +1,71 @@
+/* You can add global styles to this file, and also import other style files */
+
+html,
+body {
+    height: 100%;
+    margin: 0;
+    font-family: Roboto, sans-serif;
+    background-color: #0f172a;
+    color: #f8fafc;
+}
+
+* {
+    box-sizing: hidden;
+}
+
+body {
+    overflow: hidden;
+}
+
+.mat-drawer {
+    background-color: #111827 !important;
+    color: white;
+    width: var(--mat-sidenav-container-width, 250px) !important;
+}
+
+.mat-drawer-content {
+    background-color: #09323f;
+}
+
+.page-title {
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    color: #f8fafc;
+}
+
+.mat-mdc-text-field-wrapper {
+  background-color: white !important;
+  border-radius: 8px !important;
+}
+ 
+.mdc-text-field--outlined {
+  --mdc-outlined-text-field-container-color: white !important;
+}
+ 
+.mat-mdc-form-field input,
+.mat-mdc-form-field textarea,
+.mat-mdc-select-value-text,
+.mat-mdc-select-min-line {
+  color: black !important;
+}
+ 
+.mat-mdc-floating-label {
+  background-color: white !important;
+  padding: 0 6px !important;
+  border-radius: 4px;
+  color: #475569 !important;
+}
+ 
+.mat-mdc-form-field-icon-suffix,
+.mat-mdc-select-arrow {
+  color: #475569 !important;
+}
+
+.mat-mdc-text-field-wrapper {
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+}
+
+mat-form-field {
+    min-width: 220px;
+}

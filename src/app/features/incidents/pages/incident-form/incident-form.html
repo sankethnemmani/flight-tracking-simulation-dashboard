@@ -1,0 +1,88 @@
+<div class="page-title">
+    Incident Reporting Form
+</div>
+
+<form [formGroup]="incidentForm" (ngSubmit)="submitIncident()" class="incident-form">
+    <mat-form-field appearance="outline">
+        <mat-label> Flight ID </mat-label>
+        <input matInput formControlName="flightId">
+        @if (incidentForm.get('flightId')?.hasError('required') && incidentForm.get('flightId')?.touched) {
+        <mat-error>Flight ID is required</mat-error>
+        }
+    </mat-form-field>
+
+
+    <mat-form-field appearance="outline">
+        <mat-label> Incident Type </mat-label>
+        <mat-select formControlName="incidentType">
+            <mat-option value="Technical"> Technical </mat-option>
+            <mat-option value="Communication Failure">
+                Communication Failure
+            </mat-option>
+            <mat-option value="Weather">
+                Weather
+            </mat-option>
+        </mat-select>
+        @if (incidentForm.get('incidentType')?.hasError('required') && incidentForm.get('incidentType')?.touched) {
+        <mat-error>Incident Type is required</mat-error>
+        }
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+        <mat-label> Severity </mat-label>
+        <mat-select formControlName="severity">
+            <mat-option value="LOW"> LOW </mat-option>
+            <mat-option value="MEDIUM"> MEDIUM </mat-option>
+            <mat-option value="HIGH"> HIGH </mat-option>
+        </mat-select>
+        @if (incidentForm.get('severity')?.hasError('required') && incidentForm.get('severity')?.touched) {
+        <mat-error>severity is required</mat-error>
+        }
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+        <mat-label> Description </mat-label>
+        <textarea matInput rows="4" formControlName="description"> </textarea>
+        @if (incidentForm.get('description')?.hasError('required') && incidentForm.get('description')?.touched) {
+        <mat-error>description is required</mat-error>
+        }
+        @if (incidentForm.get('description')?.hasError('minlength') && incidentForm.get('description')?.touched) {
+        <mat-error>Minimum 10 characters required</mat-error>
+        }
+    </mat-form-field>
+
+    @if (incidentForm.get('severity')?.value === 'HIGH') {
+    <mat-form-field appearance="outline">
+        <mat-label> Assigned Team </mat-label>
+        <input matInput formControlName="assignedTeam">
+        @if (incidentForm.get('assignedTeam')?.hasError('required') && incidentForm.get('assignedTeam')?.touched) {
+        <mat-error>Assigned Team is required for HIGH severity incidents</mat-error>
+        }
+    </mat-form-field>
+    }
+
+    @if (incidentForm.get('incidentType')?.value ==='Communication Failure') {
+    <mat-form-field appearance="outline">
+        <mat-label>
+            Communication Channel
+        </mat-label>
+        <input matInput formControlName="communicationChannel">
+        @if (incidentForm.get('communicationChannel')?.hasError('required') &&
+        incidentForm.get('communicationChannel')?.touched) {
+        <mat-error>Communication Channel is required</mat-error>
+        }
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+        <mat-label>
+            Failure Reason
+        </mat-label>
+        <textarea matInput rows="3" formControlName="communicationFailureReason"></textarea>
+        @if (incidentForm.get('communicationFailureReason')?.hasError('required') &&
+        incidentForm.get('communicationFailureReason')?.touched) {
+        <mat-error>Communication Failure Reason Channel is required</mat-error>
+        }
+    </mat-form-field>
+    }
+    <button mat-raised-button color="primary" type="submit" [disabled]="incidentForm.invalid"> Submit Incident </button>
+</form>

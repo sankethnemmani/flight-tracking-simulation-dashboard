@@ -1,0 +1,19 @@
+mat-toolbar {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background-color: #1e293b !important;
+    color: white;
+    border-bottom: 1px solid #334155;
+    border-bottom-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+}
+
+.toolbar-spacer {
+    flex: 1;
+}
+
+mat-form-field {
+    width: 180px;
+    margin-top: 25px;
+}

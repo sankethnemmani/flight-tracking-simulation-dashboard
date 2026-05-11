@@ -1,0 +1,58 @@
+.dashboard-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+    gap: 20px;
+}
+
+.dashboard-card {
+    background-color: #1e293b;
+    color: white;
+    padding: 0px 20px 10px 20px;
+    border-radius: 16px;
+}
+
+.dashboard-card h2{
+    margin-bottom: 10px;
+    font-size: 18px;
+}
+
+.dashboard-card p {
+    font-size: 32px;
+    font-weight: bold;
+}
+
+.flight-list {
+    margin-top: 24px;
+    display: grid;
+    gap: 16px;
+}
+
+.flight-card {
+    background-color: #1e293b;
+    color: white;
+    padding-left: 21px;
+}
+
+.search-section {
+    margin: 24px 0;
+}
+
+mat-form-field {
+    width: 400px;
+}
+
+.filter-section {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 24px;
+    flex-wrap: wrap;
+}
+
+.empty-state {
+    background-color: #1e293b;
+    padding: 40px;
+    text-align: center;
+    border-radius: 16px;
+    color: #cbd5e1;
+    font-size: 18px;
+}

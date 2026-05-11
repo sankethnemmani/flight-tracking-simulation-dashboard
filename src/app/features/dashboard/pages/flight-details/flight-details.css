@@ -1,0 +1,12 @@
+.details-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px,1fr));
+    gap: 20px;
+}
+
+.details-card {
+    background-color: #1e293b;
+    color: white;
+    padding: 20px;
+    border-radius: 16px;
+}

@@ -1,0 +1,111 @@
+<div class="page-title">
+    Flight Monitoring Dashboard
+</div>
+
+<div class="dashboard-cards">
+    <mat-card class="dashboard-card">
+        <h2>Total Flights</h2>
+        <span>{{ (flights$ | async)?.length }}</span>
+    </mat-card>
+    <mat-card class="dashboard-card">
+        <h2>Active Alerts</h2>
+        <span>{{ (alerts$ | async)?.length || 0}}</span>
+    </mat-card>
+</div>
+
+<app-flight-map [flights]="flights$ | async"></app-flight-map>
+
+<div class="search-section">
+    <mat-form-field appearance="outline">
+        <mat-label> Search Flights </mat-label>
+
+        <input matInput placeholder="Search by Flight ID / Airport / FIR" (input)="onSearch($event)">
+    </mat-form-field>
+</div>
+
+<div class="filter-section">
+    <mat-form-field appearance="outline">
+        <mat-label>Status</mat-label>
+        <mat-select (selectionChange)="onStatusChange($event.value)">
+            <mat-option value="">
+                All
+            </mat-option>
+            <mat-option value="Enroute">
+                Enroute
+            </mat-option>
+            <mat-option value="Delayed">
+                Delayed
+            </mat-option>
+            <mat-option value="Landed">
+                Landed
+            </mat-option>
+        </mat-select>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+        <mat-label>Aircraft</mat-label>
+        <mat-select (selectionChange)="onAircraftChange($event.value)">
+            <mat-option value="">
+                All
+            </mat-option>
+            <mat-option value="Airbus A320">
+                Airbus A320
+            </mat-option>
+            <mat-option value="Boeing 737">
+                Boeing 737
+            </mat-option>
+            <mat-option value="Airbus A350">
+                Airbus A350
+            </mat-option>
+            <mat-option value="Boeing 737 MAX">
+                Boeing 737 MAX
+            </mat-option>
+        </mat-select>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+        <mat-label>Fir</mat-label>
+        <mat-select (selectionChange)="onFirChange($event.value)">
+            <mat-option value="">
+                All
+            </mat-option>
+            <mat-option value="Delhi FIR">
+                Delhi FIR
+            </mat-option>
+            <mat-option value="Hyderabad FIR">
+                Hyderabad FIR
+            </mat-option>
+            <mat-option value="Chennai FIR">
+                Chennai FIR
+            </mat-option>
+            <mat-option value="Mumbai FIR">
+                Mumbai FIR
+            </mat-option>
+            <mat-option value="Dubai FIR">
+                Dubai FIR
+            </mat-option>
+            <mat-option value="New York FIR">
+                New York FIR
+            </mat-option>
+            <mat-option value="Pacific FIR">
+                Pacific FIR
+            </mat-option>
+            <mat-option value="Paris FIR">
+                Paris FIR
+            </mat-option>
+            <mat-option value="Frankfurt FIR">
+                Frankfurt FIR
+            </mat-option>
+        </mat-select>
+    </mat-form-field>
+</div>
+
+@if((flights$ | async)?.length === 0){
+<div class="empty-state">No flights found</div>
+}@else{
+<app-flight-table [flights]="flights$ | async"></app-flight-table>
+}
+
+<div class="flight-list">
+    <app-alert-panel></app-alert-panel>
+</div>

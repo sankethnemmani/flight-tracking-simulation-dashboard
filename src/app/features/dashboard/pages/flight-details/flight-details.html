@@ -1,0 +1,62 @@
+@if (flight$ | async; as flight) {
+<div class="page-title">
+    Flight Details - {{ flight.id }}
+</div>
+
+<div class="details-grid">
+    <div class="details-card">
+        <h2>Aircraft Information</h2>
+        <p>
+            Aircraft:
+            {{ flight.aircraftType }}
+        </p>
+        <p>
+            Altitude:
+            {{ flight.altitude }} ft
+        </p>
+        <p>
+            Speed:
+            {{ flight.speed }} km/h
+        </p>
+        <p>
+            Status:
+            {{ flight.status }}
+        </p>
+    </div>
+    <div class="details-card">
+        <h2>Route Information</h2>
+        <p>
+            Departure:
+            {{ flight.departureAirport }}
+        </p>
+        <p>
+            Destination:
+            {{ flight.destinationAirport }}
+        </p>
+        <p>
+            FIR:
+            {{ flight.firRegion }}
+        </p>
+        <p>
+            ETA:
+            {{ flight.eta }}
+        </p>
+    </div>
+    <div class="details-card">
+        <h2>Timeline</h2>
+        <p>Boarding Completed</p>
+        <p>Aircraft Departed</p>
+        <p>Currently Enroute</p>
+    </div>
+    <div class="details-card">
+        <h2>Communication Logs</h2>
+        <p>
+            ATC communication active
+        </p>
+        <p>
+            Last updated:
+            {{ flight.lastUpdated | date:'medium' }}
+        </p>
+    </div>
+</div>
+}

@@ -1,0 +1,32 @@
+.alert-container {
+    margin-top: 30px;
+}
+
+.alert-card {
+    color: white;
+    padding: 0px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-evenly;
+    border-left: 6px solid transparent;
+}
+
+.alert-high{
+    background-color: #7f1d1d;
+    border-left-color: #ef4444;
+}
+
+.alert-medium{
+    background-color: #78350f;
+    border-left-color: #f59e0b;
+}
+
+.alert-low{
+    background-color: #1e3a8a;
+    border-left-color: #60a5fa;
+}
+
+.alert-default{
+    background-color: #334155;
+}

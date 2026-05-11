@@ -1,0 +1,23 @@
+<div class="alert-container">
+    <div class="page-title">
+        Active Alerts
+    </div>
+
+    @for ( alert of (alerts$ | async)?.slice(0,10); track alert.id) {
+    <div class="alert-card" [ngClass]="getAlertClass(alert.severity)">
+        <h3>
+            {{ alert.flightId }}
+        </h3>
+        <p>
+            {{ alert.message }}
+        </p>
+        <p>
+            Severity:
+            {{ alert.severity }}
+        </p>
+        <p>
+            {{ alert.timestamp | date:'mediumTime' }}
+        </p>
+    </div>
+    }
+</div>

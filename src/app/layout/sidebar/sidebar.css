@@ -1,0 +1,51 @@
+:host {
+    display: block;
+    width: 250px;
+    height: 100%;
+    background-color: #09323f;
+}
+
+mat-nav-list {
+    padding-top: 90px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+a[mat-list-item] {
+    color: #e2e8f0 !important;
+    border-radius: 10px;
+    height: 50px;
+    display: flex !important;
+    align-items: center !important;
+    font-weight: 500;
+    transition: 0.2s ease;
+}
+
+a[mat-list-item]:hover {
+    background-color: #1e293b;
+}
+
+mat-icon {
+    margin-right: 14px;
+    color: #e2e8f0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.active-link{
+    background-color: #2563eb !important;
+    color: white !important;
+}
+
+.nav-item{
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    width: 100%;
+}
+
+span{
+    color: white;
+}

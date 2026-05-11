@@ -1,0 +1,9 @@
+#flight-map {
+    height: 500px;
+    width: 100%;
+    border-radius: 16px;
+    overflow: hidden;
+    margin-bottom: 24px;
+    margin-top: 24px;
+    border: 2px solid #1e293b;
+}

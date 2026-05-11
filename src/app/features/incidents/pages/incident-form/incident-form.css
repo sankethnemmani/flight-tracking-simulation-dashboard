@@ -1,0 +1,16 @@
+.incident-form {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  background-color: #1e293b;
+  padding: 24px;
+  border-radius: 16px;
+}
+ 
+mat-form-field {
+  width: 100%;
+}
+ 
+button {
+  width: fit-content;
+}

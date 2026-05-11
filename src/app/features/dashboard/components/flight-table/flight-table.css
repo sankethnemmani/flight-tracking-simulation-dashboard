@@ -1,0 +1,63 @@
+.flight-table {
+  width: 100%;
+  background-color: #1e293b;
+  border-radius: 12px;
+  overflow: hidden;
+  min-width: 1400px;
+}
+
+:host {
+  display: block;
+  overflow-x: auto;
+}
+ 
+th {
+  background-color: #334155;
+  color: white;
+}
+ 
+td {
+  color: white;
+}
+ 
+mat-chip {
+  width: 85px;
+  justify-content: center;
+}
+
+.status-enroute {
+  background-color: #6690eb !important;
+  color: white !important;
+}
+ 
+.status-delayed {
+  background-color: #dc2626 !important;
+  color: white !important;
+}
+ 
+.status-landed {
+  background-color: #16a34a !important;
+  color: white !important;
+}
+ 
+.status-boarding {
+  background-color: #ca8a04 !important;
+  color: white !important;
+}
+ 
+.status-departed {
+  background-color: #9333ea !important;
+  color: white !important;
+}
+ 
+.status-default {
+  background-color: #475569 !important;
+  color: white !important;
+}
+
+.table-row {
+  cursor: pointer;
+}
+.table-row:hover {
+  background-color: #334155;
+}
