@@ -80,14 +80,3 @@ http://localhost:4200
 ```bash
 ng build
 ```
- 
----
- 
-## Future Improvements
- 
-- Real WebSocket integration
-- Backend API integration
-- NgRx state management
-- Advanced map animation
-- Authentication with JWT
-- Unit and E2E testing
